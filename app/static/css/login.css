@@ -1,0 +1,93 @@
+/* Full viewport height & center content vertically and horizontally */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #BA8D59;
+  }
+ 
+  
+  .welcome-message {
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Container holding the form */
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;     
+    background: white;
+    padding: 40px 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 350px;
+    box-sizing: border-box;
+
+      /* centers it */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Form elements */
+  .login-page h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .login-page label {
+    display: block;
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .login-page input[type="text"],
+  .login-page input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+  
+  .login-page input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .login-page input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-page p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+  }
+  
+  .login-page a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .login-page a:hover {
+    text-decoration: underline;
+  }
+  

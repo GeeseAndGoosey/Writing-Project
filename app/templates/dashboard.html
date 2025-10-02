@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+<div class="dashboard-wrapper">
+<h2>Dashboard</h2>
+<p>Welcome, {{ current_user.username }}!</p>
+<p>My Projects</p>
+<button id = "new-project-button">+ New Project</button>
+</div>
+
+
+<div id = "create-project-modal" class = "modal">
+    <div class = "modal-content">
+        <span class = "close">&times;</span>
+        <h3>Create Project</h3>
+        <form method = "POST" action = "{{url_for('main.new_project')}}">
+            <label for = "title">Project Title</label>
+            <input type = "text" id = "title" name = "title" required>
+            <label for="description">Description</label>
+            <textarea id = "description" name = "description" required></textarea>
+            <button type = "submit">Create</button>
+        </form>
+    </div>
+</div>
+
+<div class = "projects-container">
+    {% for project in projects %}
+    <div class = "project-card">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a href = "{{url_for('main.view_project', project_id = project.id)}}">View Project</a>
+    </div>
+    {% else %}
+    <p>No projects yet.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}
